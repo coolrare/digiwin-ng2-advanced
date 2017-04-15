@@ -4,12 +4,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route } from '@angular/router';
 import { DashboardComponent } from "app/dashboard/dashboard.component";
 import { CardsComponent } from "app/cards/cards.component";
-import { FlotComponent } from "app/charts/flot/flot.component";
-import { RadialComponent } from "app/charts/radial/radial.component";
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'cards/:type', component: CardsComponent },
+  { path: 'charts',
+    loadChildren: './charts/charts.module#ChartsModule'
+  },
   fallbackRoute
 ];
 
