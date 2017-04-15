@@ -3,8 +3,10 @@
 </h1>
 
 <ul>
-  <li><a routerLink="/layout">Layout</a></li>
-  <li><a routerLink="/home">Home</a></li>
+  <li><a routerLink="/" routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}">Layout</a></li>
+  <li><a routerLink="/home" routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}">Home</a></li>
 </ul>
 
 <router-outlet></router-outlet>
