@@ -1,3 +1,5 @@
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
 import { fallbackRoute } from './shared/fallback-route';
 import { ReduceSubscriber } from 'rxjs/operator/reduce';
 import { NgModule } from '@angular/core';
@@ -6,11 +8,16 @@ import { DashboardComponent } from "app/dashboard/dashboard.component";
 import { CardsComponent } from "app/cards/cards.component";
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'cards/:type', component: CardsComponent },
-  { path: 'charts',
-    loadChildren: './charts/charts.module#ChartsModule'
+  { path: '', component: LayoutComponent,
+    children: [
+      { path: '', component: DashboardComponent },
+      { path: 'cards/:type', component: CardsComponent },
+      { path: 'charts',
+        loadChildren: './charts/charts.module#ChartsModule'
+      },
+    ]
   },
+  { path: 'login', component: LoginComponent },
   fallbackRoute
 ];
 
