@@ -8,7 +8,7 @@ import { RadialComponent } from "app/charts/radial/radial.component";
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'cards', component: CardsComponent },
+  { path: 'cards/:type', component: CardsComponent },
   { path: 'charts',
     children: [
       { path: '', redirectTo: 'flot', pathMatch: 'full' },

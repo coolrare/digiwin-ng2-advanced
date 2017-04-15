@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-cards',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
+  type = 0;
   ngOnInit() {
+    this.type = this.route.snapshot.params['type'];
+  }
+
+  addType(num: number) {
+    this.type = +this.type + num;
+    this.router.navigateByUrl('/cards/'+this.type);
   }
 
 }
