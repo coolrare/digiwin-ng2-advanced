@@ -1,3 +1,4 @@
+import { fallbackRoute } from './shared/fallback-route';
 import { ReduceSubscriber } from 'rxjs/operator/reduce';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route } from '@angular/router';
@@ -9,13 +10,7 @@ import { RadialComponent } from "app/charts/radial/radial.component";
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'cards/:type', component: CardsComponent },
-  { path: 'charts',
-    children: [
-      { path: '', redirectTo: 'flot', pathMatch: 'full' },
-      { path: 'flot', component: FlotComponent },
-      { path: 'radial', component: RadialComponent }
-    ]
-  }
+  fallbackRoute
 ];
 
 @NgModule({
