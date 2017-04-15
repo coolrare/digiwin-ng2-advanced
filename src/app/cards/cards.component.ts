@@ -16,6 +16,12 @@ export class CardsComponent implements OnInit {
     //this.type = +this.route.snapshot.params['type'];
     this.route.params.subscribe(params => {
       this.type = +params['type'];
+
+      this.m1 = params['m1'];
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.q1 = params['q1'];
     })
   }
 
@@ -23,5 +29,10 @@ export class CardsComponent implements OnInit {
   //   this.type = this.type + num;
   //   this.router.navigateByUrl('/cards/'+this.type);
   // }
+
+  q1;
+
+  m1;
+
 
 }
