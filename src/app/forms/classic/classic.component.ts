@@ -13,22 +13,19 @@ export class ClassicComponent implements OnInit {
   form: FormGroup;
 
   ngOnInit() {
-    this.metadataControls = this.fb.array([
-        this.fb.control('Temp 1'),
-        this.fb.control('Temp 2')
-      ]);
-
     this.form = this.fb.group({
       'title': '',
       'summary': '',
-      'metadata': this.metadataControls
+      'metadata': this.fb.array([
+        this.fb.control('Temp 1'),
+        this.fb.control('Temp 2')
+      ])
     });
   }
 
-  metadataControls: FormArray;
-
   addNewControl() {
-    this.metadataControls.insert(0, this.fb.control('TEST'));
+    let arr = this.form.get('metadata') as FormArray;
+    arr.push(this.fb.control('TEST'));
   }
 
   data: any = {};
