@@ -12,4 +12,6 @@ export class ClassicComponent implements OnInit {
   ngOnInit() {
   }
 
+  data: any = {};
+
 }

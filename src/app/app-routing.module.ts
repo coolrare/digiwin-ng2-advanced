@@ -12,7 +12,7 @@ import { CardsComponent } from "app/cards/cards.component";
 const routes: Routes = [
   { path: '', component: LayoutComponent,
     children: [
-      { path: '', component: DashboardComponent },
+      { path: '', redirectTo: '/forms/classic', pathMatch: 'full' },
       { path: 'cards/:type', component: CardsComponent },
       { path: 'charts',
         loadChildren: './charts/charts.module#ChartsModule',
