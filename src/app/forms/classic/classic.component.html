@@ -26,7 +26,7 @@
                   name="summary"
                   [(ngModel)]="data.summary"
                   #tSummary="ngModel"
-                  required>
+                  [required]="tTitle.valid">
                   <span *ngIf="tSummary.errors?.required"
                     class="help-block">
                     請輸入 Summary 欄位內容
