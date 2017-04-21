@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm, FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-classic',
@@ -8,9 +8,15 @@ import { NgForm } from "@angular/forms";
 })
 export class ClassicComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
+
+  form: FormGroup;
 
   ngOnInit() {
+    this.form = this.fb.group({
+      'title': 'Default Title',
+      'summary': 'My Summary'
+    });
   }
 
   data: any = {};
