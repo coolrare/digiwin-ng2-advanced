@@ -11,6 +11,8 @@ import { ChartsModule } from "app/charts/charts.module";
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 
+import { LoginGuard } from './login.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,7 @@ import { LayoutComponent } from './layout/layout.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
