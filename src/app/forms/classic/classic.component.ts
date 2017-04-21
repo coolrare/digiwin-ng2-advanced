@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormBuilder, FormGroup, FormArray } from "@angular/forms";
+import { AbstractControl, NgForm, FormBuilder, FormGroup, FormArray, Validators } from "@angular/forms";
+import { mustHaveWillValidator } from "app/shared/must-have-will.validator";
 
 @Component({
   selector: 'app-classic',
@@ -14,8 +15,10 @@ export class ClassicComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      'title': '',
-      'summary': '',
+      'title': ['', [Validators.required,
+                     Validators.minLength(3),
+                     mustHaveWillValidator]],
+      'summary': ['', Validators.required],
       'metadata': this.fb.array([
         this.fb.control('Temp 1'),
         this.fb.control('Temp 2')
