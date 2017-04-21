@@ -14,6 +14,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoginGuard } from './login.guard';
 import { ClassicComponent } from './forms/classic/classic.component';
 import { Template1Component } from './template1/template1.component';
+import { CounterbtnDirective } from './counterbtn.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Template1Component } from './template1/template1.component';
     LoginComponent,
     LayoutComponent,
     ClassicComponent,
-    Template1Component
+    Template1Component,
+    CounterbtnDirective
   ],
   imports: [
     BrowserModule,

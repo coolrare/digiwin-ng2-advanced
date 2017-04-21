@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'app-template1',
@@ -12,4 +12,12 @@ export class Template1Component implements OnInit {
   ngOnInit() {
   }
 
+  data: any;
+
+  @ContentChild('btn1')
+  btn1: HTMLButtonElement;
+
+  ngAfterContentInit() {
+
+  }
 }

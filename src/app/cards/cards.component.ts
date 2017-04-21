@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Template1Component } from './../template1/template1.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -7,6 +8,15 @@ import { Router, ActivatedRoute } from "@angular/router";
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
+
+
+  @ViewChild(Template1Component)
+  template1: Template1Component;
+
+  ngAfterViewInit() {
+    // this.template1.data
+  }
+
 
   constructor(private router: Router,
               private route: ActivatedRoute) { }
