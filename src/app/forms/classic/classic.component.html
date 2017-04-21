@@ -35,6 +35,22 @@
           <pre>{{ data | json }}</pre>
           <pre>{{ f.value | json}}</pre>
 
+          <div formArrayName="metadata">
+
+            <fieldset *ngFor="let item of form.controls.metadata.controls; let idx = index">
+              <div class="form-group">
+                <label for="input-id-1" class="col-sm-2 control-label">Data {{idx}}</label>
+                <div class="col-sm-10">
+                  <input id="input-id-1" type="text" class="form-control"
+                    [formControlName]="idx">
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <button (click)="addNewControl()">新增欄位</button>
+
           <fieldset>
             <div class="form-group">
               <label class="col-lg-2 control-label">Disabled</label>
