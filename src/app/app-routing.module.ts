@@ -1,3 +1,4 @@
+import { LoginGuard } from './login.guard';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { fallbackRoute } from './shared/fallback-route';
@@ -13,7 +14,8 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'cards/:type', component: CardsComponent },
       { path: 'charts',
-        loadChildren: './charts/charts.module#ChartsModule'
+        loadChildren: './charts/charts.module#ChartsModule',
+        canActivate: [LoginGuard]
       },
     ]
   },
